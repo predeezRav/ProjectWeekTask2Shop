@@ -1,0 +1,59 @@
+﻿@page
+@model ProjectShop.Pages.Products.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Product.Navn" class="control-label"></label>
+                <input asp-for="Product.Navn" class="form-control" />
+                <span asp-validation-for="Product.Navn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Beskrivelse" class="control-label"></label>
+                <input asp-for="Product.Beskrivelse" class="form-control" />
+                <span asp-validation-for="Product.Beskrivelse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Billeder" class="control-label"></label>
+                <input asp-for="Product.Billeder" class="form-control" />
+                <span asp-validation-for="Product.Billeder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Size" class="control-label"></label>
+                <input asp-for="Product.Size" class="form-control" />
+                <span asp-validation-for="Product.Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Farver" class="control-label"></label>
+                <input asp-for="Product.Farver" class="form-control" />
+                <span asp-validation-for="Product.Farver" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Pris" class="control-label"></label>
+                <input asp-for="Product.Pris" class="form-control" />
+                <span asp-validation-for="Product.Pris" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
