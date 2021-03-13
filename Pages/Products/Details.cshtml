@@ -4,53 +4,57 @@
 @{
     ViewData["Title"] = "Details";
 }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/descri.css">
+    <title>Document</title>
+</head>
 
-<h1>Details</h1>
+<body>
+    <div>
+        <div class="desc-container">
+            <h1 class="sub-title">@Html.DisplayFor(model => model.Product.Navn)</h1>
+            <div id="container">
+                <div id="item">
+                    <img src="@Url.Content(Model.Product.Billeder)" style="height:200px; width:200px;" />
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.Billeder)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Url.Content(Model.Product.Billeder)" style="height:200px; width:200px;" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.Navn)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.Navn)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.Beskrivelse)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.Beskrivelse)
-        </dd>
+                </div>
+                <div id="item">
+                    <img src="@Url.Content(Model.Product.Billeder)" style="height:200px; width:200px;" />
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.Size)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.Size)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.Farver)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.Farver)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.Pris)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.Pris)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Product.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+                </div>
+
+                <div id="item">
+                    <img src="@Url.Content(Model.Product.Billeder)" style="height:200px; width:200px;" />
+
+                </div>
+
+                <div id="item">
+                    <img src="@Url.Content(Model.Product.Billeder)" style="height:200px; width:200px;" />
+
+                </div>
+            </div>
+
+            <div id="container">
+                <div class="desc-container__text" id="item">
+                    @Html.DisplayFor(model => model.Product.Beskrivelse)
+                </div>
+
+
+                <div class="desc-container__text" id="item">
+                    <ul class="list-left">
+                        Fås i disse størrelser:
+                        <li>@Html.DisplayFor(model => model.Product.Size)</li>
+                    </ul>
+                    <ul class="list-right">
+                        Fås i disse farver:
+                        <li>@Html.DisplayFor(model => model.Product.Farver)</li>
+                    </ul>
+                    <p class="price">Pris <br> @Html.DisplayFor(model => model.Product.Pris) kr.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

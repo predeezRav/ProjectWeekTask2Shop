@@ -6,49 +6,12 @@
 }
 
 <h1>Kjoler</h1>
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Kvinde[0].Product.Navn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Kvinde[0].Product.Pris)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Kvinde[0].Tøjtype.Titel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Kvinde[0].Product.Billeder)
-            </th>
-
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Kvinde)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Product.Navn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Product.Pris)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tøjtype.Titel)
-                </td>
-                <td>
-                    <img src="@Url.Content(item.Product.Billeder)" style="height:40px; width:40px;" />
-                </td>
-                <td>
-                    
-                    <a asp-page="/Products/Details" asp-route-id="@item.ProductID">Details</a> 
-                   
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+@foreach (var item in Model.Kvinde)
+{
+    <a asp-page="/Products/Details" asp-route-id="@item.ProductID">
+        @Html.DisplayFor(modelItem => item.Product.Navn)
+        @Html.DisplayFor(modelItem => item.Product.Pris)
+        @Html.DisplayFor(modelItem => item.Tøjtype.Titel)
+        <img src="@Url.Content(item.Product.Billeder)" style="height:40px; width:40px;" />
+    </a>
+}
