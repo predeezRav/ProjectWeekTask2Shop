@@ -1,7 +1,7 @@
 html, body{
      
     margin: 0;
-      height: 100%;
+    height: 100%;
   }
   
   .title{
@@ -27,13 +27,12 @@ html, body{
       
     
   }
-  li{
-      display: inline;
-      text-align: center;
-      margin: 0 auto;
-      padding: 20px;
-  
-      
+  .sizes, .colors{
+      width: 200px;
+  }
+  .list-left, .list-right, .price{
+      display: flex;
+      flex-direction: column;
   }
   
   .navs{
@@ -54,49 +53,56 @@ html, body{
   }
    
   .desc-container {
- 
-padding-top: 100px; 
- padding-left: 350px;
- padding-right: 350px;
+   display: flex;
+   flex-direction: row;
+   justify-content:center;
+   padding-top: 100px; 
+   padding-left: 350px;
+   padding-right: 350px;
+  }
+
+  #image-container{
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto;
+
+      grid-gap: 30px;
   }
    
-  #container {
+  #text-container {
 
       display: flex;
       flex-flow:wrap;
-      justify-content: center; 
-      padding: 0;
-      margin: 0;
+      justify-content: left; 
+      padding-left: 30px;
       list-style: none;
   
     }
-  
-    #item {
-      display: flex;
-      float: left;
-      flex-flow: wrap;
- 
-      justify-content: center;
-    }
 
+img {
+
+    border: solid 2px red;
+}
     .desc-container-bottom {
    
     }
 
 
-  .desc-container__text {
+.desc-container__text {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-     margin-left: 50px;
-     margin-right: 50px;
-  }
+}
+.desc-container__text > ul{
+   margin: 30px;
+}
 
-  .price {
-    color: red;
-      font-size: 40px;
-      font-weight: 500;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+    .price {
+        color: red;
+        font-size: 40px;
+        font-weight: 500;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
   
     .sub-title{

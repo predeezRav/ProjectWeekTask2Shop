@@ -14,44 +14,47 @@
 
 <body>
     <div>
+        <h1 class="sub-title">@Html.DisplayFor(model => model.Product.Navn)</h1>
         <div class="desc-container">
-            <h1 class="sub-title">@Html.DisplayFor(model => model.Product.Navn)</h1>
-            <div id="container">
-                <div id="item">
+            <div id="image-container" >
+                <div class="item">
                     <img src="@Url.Content(Model.Product.Billeder)" style="height:200px; width:200px;" />
-
                 </div>
-                <div id="item">
-                    <img src="@Url.Content(Model.Product.Billeder)" style="height:200px; width:200px;" />
-
-                </div>
-
-                <div id="item">
+                <div class="item">
                     <img src="@Url.Content(Model.Product.Billeder)" style="height:200px; width:200px;" />
 
                 </div>
 
-                <div id="item">
+                <div class="item">
+                    <img src="@Url.Content(Model.Product.Billeder)" style="height:200px; width:200px;" />
+
+                </div>
+
+                <div class="item">
                     <img src="@Url.Content(Model.Product.Billeder)" style="height:200px; width:200px;" />
 
                 </div>
             </div>
 
-            <div id="container">
-                <div class="desc-container__text" id="item">
+            <div id="text-container">
+                <div class="desc-container__desc" id="item">
                     @Html.DisplayFor(model => model.Product.Beskrivelse)
                 </div>
 
 
                 <div class="desc-container__text" id="item">
-                    <ul class="list-left">
-                        Fås i disse størrelser:
-                        <li>@Html.DisplayFor(model => model.Product.Size)</li>
-                    </ul>
-                    <ul class="list-right">
-                        Fås i disse farver:
-                        <li>@Html.DisplayFor(model => model.Product.Farver)</li>
-                    </ul>
+                    <div class="sizes">
+                        <b>Fås i disse størrelser:</b>
+                        <ul class="list-left">
+                            <li>@Html.DisplayFor(model => model.Product.Size)</li>
+                        </ul>
+                    </div>
+                    <div class="colors">
+                        <b>Fås i disse farver:</b>
+                        <ul class="list-right">
+                            <li>@Html.DisplayFor(model => model.Product.Farver)</li>
+                        </ul>
+                    </div>
                     <p class="price">Pris <br> @Html.DisplayFor(model => model.Product.Pris) kr.</p>
                 </div>
             </div>
