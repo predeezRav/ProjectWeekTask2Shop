@@ -1,22 +1,89 @@
 ﻿@page
-@model ProjectShop.Pages.Kvinder.IndexModel
-
+@model ProjectShop.Models.Kvinde
 @{
-    ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Main.css">
+    <link rel="stylesheet" href="~/css/sidenavstyle.css" />
+    <title>Document</title>
+</head>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-@foreach (var item in Model.Kvinde) {
-        <div>
-            <a asp-area="" asp-page="/Kvinder/Kjoler">
-                @Html.DisplayFor(modelItem => item.Product.Navn)
-                @Html.DisplayFor(modelItem => item.Product.Pris)
-                @Html.DisplayFor(modelItem => item.Tøjtype.Titel)
-                <img src="@Url.Content(item.Product.Billeder)" style="height:40px; width:40px;" />
-            </a>
+<div class="sidenav">
+    <h2 class="sidenav-title">Damer</h2>
+    <a href="#Kjoler">Kjoler</a>
+    <a href="#Toppe">Toppe</a>
+    <a href="#Skjorte">Skjorte</a>
+    <a href="#Bluser">Bluser</a>
+    <a href="#Blazers">Blazers</a>
+    <a href="#Strik">Strik</a>
+    <a href="#Bukser">Bukser</a>
+    <a href="#Sko">Sko</a>
+</div>
+
+<div class="padding-up" id="container">
+    <a asp-page="/Kvinder/Kjoler">
+        <div id="item">
+            <img class="clickable" src="https://tomyum.alandenz.dk/wp-content/uploads/2021/03/1.png" alt="" srcset="">
+            <h2 class="sub-title clickable">
+                KJOLER
+            </h2>
         </div>
-}
+    </a>
+
+
+    <div id="item">
+        <img src="https://tomyum.alandenz.dk/wp-content/uploads/2021/03/2.png" alt="" srcset="">
+        <h2 class="sub-title">
+            TOPPE
+        </h2>
+    </div>
+
+
+    <div id="item">
+        <img src="https://tomyum.alandenz.dk/wp-content/uploads/2021/03/3.png" alt="" srcset="">
+        <h2 class="sub-title">
+            SKJORTE
+        </h2>
+    </div>
+
+    <div id="item">
+        <img src="https://tomyum.alandenz.dk/wp-content/uploads/2021/03/4.png" alt="" srcset="">
+        <h2 class="sub-title">
+            BLUSER
+        </h2>
+    </div>
+
+    <div id="item">
+        <img src="https://tomyum.alandenz.dk/wp-content/uploads/2021/03/5.png" alt="" srcset="">
+        <h2 class="sub-title">
+            BLAZERS
+        </h2>
+    </div>
+
+
+    <div id="item">
+        <img src="https://tomyum.alandenz.dk/wp-content/uploads/2021/03/6.png" alt="" srcset="">
+        <h2 class="sub-title">
+            STRIK
+        </h2>
+    </div>
+
+
+    <div id="item">
+        <img src="https://tomyum.alandenz.dk/wp-content/uploads/2021/03/7.png" alt="" srcset="">
+        <h2 class="sub-title">
+            BUKSER
+        </h2>
+    </div>
+
+    <div id="item">
+        <img src="https://tomyum.alandenz.dk/wp-content/uploads/2021/03/8.png" alt="" srcset="">
+        <h2 class="sub-title">
+            SKO
+        </h2>
+    </div>
+</div>

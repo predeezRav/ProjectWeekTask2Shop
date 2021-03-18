@@ -1,0 +1,16 @@
+﻿.product_items{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto, 100px);
+}
+
+.product_item{
+    display: flex;
+    flex-direction: column;
+}
+
+.product_item > img{
+    min-width: 200px;
+    min-height: 200px;
+    border: solid 2px red;
+}

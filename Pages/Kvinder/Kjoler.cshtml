@@ -5,13 +5,37 @@
     ViewData["Title"] = "Kjoler";
 }
 
-<h1>Kjoler</h1>
-@foreach (var item in Model.Kvinde)
-{
-    <a asp-page="/Products/Details" asp-route-id="@item.ProductID">
-        @Html.DisplayFor(modelItem => item.Product.Navn)
-        @Html.DisplayFor(modelItem => item.Product.Pris)
-        @Html.DisplayFor(modelItem => item.Tøjtype.Titel)
-        <img src="@Url.Content(item.Product.Billeder)" style="height:40px; width:40px;" />
-    </a>
-}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/sidenavstyle.css" />
+    <link rel="stylesheet" href="~/css/dresses.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kjoler</h1>
+    <div class="sidenav">
+        <h2 class="sidenav-title">Damer</h2>
+        <a href="#Kjoler">Kjoler</a>
+        <a href="#Toppe">Toppe</a>
+        <a href="#Skjorte">Skjorte</a>
+        <a href="#Bluser">Bluser</a>
+        <a href="#Blazers">Blazers</a>
+        <a href="#Strik">Strik</a>
+        <a href="#Bukser">Bukser</a>
+        <a href="#Sko">Sko</a>
+    </div>
+    <div  class="product_items">
+        @foreach (var item in Model.Kvinde)
+        {
+            <a asp-page="/Products/Details" asp-route-id="@item.ProductID">
+                <div class="product_item">
+                    <img src="@Url.Content(item.Product.Billeder)" style="height:40px; width:40px;" />
+                    <h3>@Html.DisplayFor(modelItem => item.Product.Navn)</h3>
+                </div>
+            </a>
+
+        }
+    </div>
+</body>
